@@ -2,7 +2,7 @@
 
 cur_dir=$(pwd)
 
-maven_version="3.6.3"
+maven_version="3.8.4"
 image_tag="maven-${maven_version}-openjdk-11-cn"
 maven_package="apache-maven-${maven_version}-bin.tar.gz"
 maven_dir="apache-maven-${maven_version}"
