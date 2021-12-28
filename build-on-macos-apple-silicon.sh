@@ -22,7 +22,7 @@ tar -xzf "${cur_dir}/${maven_package}"
 tar -xzf "${cur_dir}/${jdk_package}"
 mv "${cur_dir}/${jdk_dir}" "${cur_dir}/${jdk_safe_dir}"
 
-docker buildx build --platform=linux/amd64 -t java-maven-builder:${image_tag} .
+docker buildx build --platform=linux/amd64 -t ayakurayuki/java-maven-builder:${image_tag} .
 
 rm "${cur_dir}/${maven_package}"
 rm "${cur_dir}/${jdk_package}"
