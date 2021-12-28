@@ -8,7 +8,8 @@ COPY ${OUTSIDE_JDK} /opt/jdk
 COPY config/sources.list /opt/sources.list
 COPY config/maven-settings.xml /opt/settings.xml
 # Prepare image environment
-RUN cp /opt/sources.list /etc/apt/sources.list \
+RUN ulimit -aH unlimited \
+    && cp /opt/sources.list /etc/apt/sources.list \
     && chmod 777 /opt/* \
     && cp /opt/settings.xml /opt/apache-maven/conf/settings.xml \
     && apt-get update \
