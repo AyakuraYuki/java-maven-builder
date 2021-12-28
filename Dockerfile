@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 # Args
-ARG OUTSIDE_MAVEN=apache-maven-3.8.4
+ARG OUTSIDE_MAVEN=apache-maven-3.6.3
 ARG OUTSIDE_JDK=jdk-11.0.13.8
 # Copy files into image
 COPY ${OUTSIDE_MAVEN} /opt/apache-maven
