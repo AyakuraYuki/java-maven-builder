@@ -27,13 +27,13 @@ ENV MAVEN_HOME /opt/apache-maven
 ENV JAVA_HOME /opt/jdk
 ENV JAVA_VERSION=11.0.13
 ENV PATH "${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
-## Prepare non-root user
-#RUN useradd -ms /bin/bash codeboy
-#USER codeboy
-#WORKDIR /home/codeboy
-#RUN mkdir -p /home/codeboy/.m2 \
-#    && cp /opt/settings.xml /home/codeboy/.m2/settings.xml \
-#    && chmod 777 /home/codeboy/.m2 \
-#    && chmod 777 /home/codeboy/.m2/* \
-#    && java -version \
-#    && mvn -version
+# Prepare non-root user
+RUN useradd -ms /bin/bash codeboy
+USER codeboy
+WORKDIR /home/codeboy
+RUN mkdir -p /home/codeboy/.m2 \
+    && cp /opt/settings.xml /home/codeboy/.m2/settings.xml \
+    && chmod 777 /home/codeboy/.m2 \
+    && chmod 777 /home/codeboy/.m2/* \
+    && java -version \
+    && mvn -version
