@@ -551,3 +551,5 @@ Temporary Items
 # compacted package
 *.tar.gz
 *.zip
+apache-maven-*
+jdk-*
