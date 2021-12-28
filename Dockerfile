@@ -7,6 +7,8 @@ COPY ${OUTSIDE_MAVEN} /opt/apache-maven
 COPY ${OUTSIDE_JDK} /opt/jdk
 COPY config/sources.list /opt/sources.list
 COPY config/maven-settings.xml /opt/settings.xml
+COPY ulimit/limits.conf /etc/security/limits.conf
+COPY ulimit/sysctl.conf /etc/sysctl.conf
 # Prepare image environment
 RUN ulimit -aH unlimited \
     && cp /opt/sources.list /etc/apt/sources.list \
