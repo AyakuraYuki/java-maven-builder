@@ -546,10 +546,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### Dependencd big file
-
-# compacted package
-*.tar.gz
-*.zip
-apache-maven-*
-jdk-*
+apache-maven-*/
+jdk-*/
