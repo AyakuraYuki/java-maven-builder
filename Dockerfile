@@ -32,4 +32,6 @@ WORKDIR /home/codeboy
 RUN mkdir -p /home/codeboy/.m2 \
     && cp /opt/settings.xml /home/codeboy/.m2/settings.xml \
     && chmod 777 /home/codeboy/.m2 \
-    && chmod 777 /home/codeboy/.m2/*
+    && chmod 777 /home/codeboy/.m2/* \
+    && java -version \
+    && mvn -version
