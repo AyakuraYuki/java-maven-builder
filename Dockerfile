@@ -14,9 +14,14 @@ USER root
 RUN mkdir -p /opt/apache-maven-repository \
     && cp /opt/sources.list /etc/apt/sources.list \
     && cp /opt/settings.xml /opt/apache-maven/conf/settings.xml \
-    && apt-get update && apt-get upgrade \
-    && apt-get install -y tzdata && echo "Asia/Shanghai" > /etc/timezone && rm -vf /etc/localtime && dpkg-reconfigure -f noninteractive tzdata \
-    && apt-get autoremove && apt-get autoclean
+    && apt-get update \
+    && apt-get upgrade \
+    && apt-get install -y tzdata \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && rm -vf /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata \
+    && apt-get autoremove \
+    && apt-get autoclean
 # Prepare environment variables
 ENV LANG en_US.utf8
 ENV MAVEN_HOME /opt/apache-maven
