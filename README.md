@@ -15,21 +15,10 @@ Currently the `latest` image is same with maven3.8.4-openjdk11-cn, apt repositor
 
 ## How to build
 
+simply running `build.sh` to build image, but for those who use MacBook with Apple Silicon, use the following command to build image for amd64:
+
 ```shell
-# get current workdir in host machine
-cur_dir=$(pwd) \
-  && tar -xzf "${cur_dir}/apache-maven-3.8.4-bin.tar.gz" \
-  && tar -xzf "${cur_dir}/microsoft-jdk-11.0.13.8.1-linux-x64.tar.gz" \
-  && mv "${cur_dir}/jdk-11.0.13+8" "${cur_dir}/jdk-11.0.13.8"
-
-# build image
-docker build -t "ayakurayuki/java-maven-builder:maven3.8.4-openjdk11-cn" .
-
-# on apple silicon, use the following command to build image
-docker buildx build --platform=linux/amd64 -t "ayakurayuki/java-maven-builder:maven3.8.4-openjdk11-cn" .
-
-# cleanup
-rm -rf "${cur_dir}/apache-maven-3.8.4" && rm -rf "${cur_dir}/jdk-11.0.13.8"
+docker buildx build --platform=linux/amd64 -t "<tag_name>" .
 ```
 
 ## How to use this image
