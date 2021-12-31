@@ -5,14 +5,7 @@
   <offline/>
   <pluginGroups/>
   <servers/>
-  <mirrors>
-    <mirror>
-      <id>aliyunmaven</id>
-      <mirrorOf>*</mirrorOf>
-      <name>AliyunMaven</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-    </mirror>
-  </mirrors>
+  <mirrors/>
   <proxies/>
   <profiles/>
   <activeProfiles/>
