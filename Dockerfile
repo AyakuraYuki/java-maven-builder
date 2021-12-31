@@ -11,7 +11,8 @@ COPY ulimit/limits.conf /etc/security/limits.conf
 COPY ulimit/sysctl.conf /etc/sysctl.conf
 # Prepare image environment
 USER root
-RUN cp /opt/sources.list /etc/apt/sources.list \
+RUN mkdir -p /opt/apache-maven-repository \
+    && cp /opt/sources.list /etc/apt/sources.list \
     && cp /opt/settings.xml /opt/apache-maven/conf/settings.xml \
     && apt-get update \
     && apt-get upgrade \
